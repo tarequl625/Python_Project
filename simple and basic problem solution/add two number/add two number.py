@@ -1,21 +1,31 @@
-#type - 1
+# -------------------------------
+# Type - 1 (Direct integer addition)
+# -------------------------------
 firstNumber = 10
 secondNumber = 20
-print(firstNumber+secondNumber)
+print(firstNumber + secondNumber)   # Output: 30
 
-#type - 2
+# -------------------------------
+# Type - 2 (Addition with floats)
+# -------------------------------
 firstNumber = 19.6
 secondNumber = 45.8
 sum = firstNumber + secondNumber
-print(sum)
+print(sum)   # Output: 65.4
 
-#type - 3
-firstNumber = int(input("Enter first number: "))
-secondNumber = int(input("Enter second number: "))
-print("sum of two number =", firstNumber+secondNumber)
+# -------------------------------
+# Type - 3 (Addition with user input - integers)
+# -------------------------------
+firstNumber = int(input("Enter first number: "))   # Example input: 12
+secondNumber = int(input("Enter second number: ")) # Example input: 8
+print("sum of two number =", firstNumber + secondNumber)
+# Output: sum of two number = 20
 
-#type - 4
-firstNumber = float(input("Enter first number: "))
-secondNumber = float(input("Enter second number: "))
+# -------------------------------
+# Type - 4 (Addition with user input - floats)
+# -------------------------------
+firstNumber = float(input("Enter first number: "))   # Example input: 10.5
+secondNumber = float(input("Enter second number: ")) # Example input: 4.7
 sum = firstNumber + secondNumber
-print(f"sum of two number =%.2d" %sum)
+print(f"sum of two number = {sum:.2f}")
+# Output: sum of two number = 15.20
