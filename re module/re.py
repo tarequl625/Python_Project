@@ -1,7 +1,8 @@
 import re
 
 # Sample text
-txt = """Amount [400$]\nof 96!"""
+txt = """Amount [400$]\n
+                of 96!"""
 
 # 1. Find all occurrences of 'n'
 a = re.findall("n", txt)
