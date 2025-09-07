@@ -1,5 +1,4 @@
-import cmath   # cmath is used because it supports complex numbers
-
+# Type - 1
 # Input coefficients
 a = int(input("Enter number of a: "))   # Example: 1
 while a == 0:
@@ -13,10 +12,18 @@ c = int(input("Enter number of c: "))   # Example: 6
 d = (b ** 2) - (4 * a * c)
 
 # Roots formula: (-b ± √d) / 2a
+root1 = (-b+d**0.5)/2*a
+root2 = (-b-d**0.5)/2*a
+
+# Print results
+print(f"Quadratic Equation root 1 is {root1} and root 2 is {root2}")
+
+# Type - 2
+import cmath   # cmath is used because it supports complex numbers
+
+# Roots formula: (-b ± √d) / 2a
 root1 = (-b - cmath.sqrt(d)) / (2 * a)
 root2 = (-b + cmath.sqrt(d)) / (2 * a)
 
 # Print results with 2 decimal formatting
-print("The roots are {0:.2f} and {1:.2f}".format(root1.real, root2.real)
-      if d >= 0 else
-      "The roots are {0} and {1}".format(root1, root2))
+print("The roots are {0:.2f} and {1:.2f}".format(root1.real, root2.real) if d >= 0 else "The roots are {0} and {1}".format(root1, root2))

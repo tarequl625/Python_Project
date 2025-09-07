@@ -1,25 +1,43 @@
-email = input("Enter your Eamil : ")
-j,k,d=0,0,0
-if len(email)>=6:
+# -------------------------------
+# Email Validation without Regex
+# -------------------------------
+
+# Take email input from user
+email = input("Enter your Email: ")
+
+# Initialize flags
+has_uppercase, has_space, has_invalid_char = 0, 0, 0
+
+# Check minimum length
+if len(email) >= 6:
+    
+    # First character must be a letter
     if email[0].isalpha():
-        if ("@" in email) and (email.count("@")==1):
-            if (email[-4]==".") ^ (email[-3]=="."):
-                for i in email:
-                    if i==i.isspace():
-                        k=1
-                    elif i.isalpha():
-                        if i==i.upper():
-                            j=1
-                    elif i.isdigit():
+        
+        # Must contain exactly one '@'
+        if ("@" in email) and (email.count("@") == 1):
+            
+            # Check if '.' is at -3 or -4 position
+            if (email[-4] == ".") ^ (email[-3] == "."):
+                
+                # Loop through each character
+                for char in email:
+                    if char.isspace():
+                        has_space = 1
+                    elif char.isalpha() and char.isupper():
+                        has_uppercase = 1
+                    elif char.isdigit():
                         continue
-                    elif i=="_" or i=="." or i=="@":
+                    elif char in ["_", ".", "@"]:
                         continue
                     else:
-                        d=1
-                if k==1 or j==1 or d==1:
+                        has_invalid_char = 1
+                
+                # Final validation
+                if has_space == 1 or has_uppercase == 1 or has_invalid_char == 1:
                     print("Wrong Email")
                 else:
-                    print("You Enter Right Email")
+                    print("You Entered a Correct Email")
             else:
                 print("Wrong Email")
         else:
@@ -28,3 +46,12 @@ if len(email)>=6:
         print("Wrong Email")
 else:
     print("Wrong Email")
+
+# -------------------------------
+# Example Runs:
+# Input : tarequl625@gmail.com
+# Output: You Entered a Correct Email
+#
+# Input : Test@Example
+# Output: Wrong Email
+# -------------------------------
